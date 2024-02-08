@@ -1,0 +1,19 @@
+
+
+
+header{
+    background-color: black;
+    color: #ffffff;
+    padding: 15px;
+}
+
+header a{
+    color: #ffffff;
+}
+
+footer{
+    background-color: black;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+}
