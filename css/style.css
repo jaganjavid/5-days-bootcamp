@@ -1,0 +1,108 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/* Tag, Class, ID */
+
+/* h1{
+    color: red;
+}
+
+#heading-1{
+    color: green;
+} */ 
+
+.blue-heading{
+    /* color: rgba(12, 0, 143,1); */
+    color: #0000ff;
+}
+
+.box{
+    background-color: grey;
+    border: 5px green solid;
+
+    /* INNER SPACING */
+    /* padding: 50px; */
+
+    /* padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 150px;
+    padding-left: 200px; */
+
+    /* Two parameters 1st => TOP && BOTTOM 2nd => LEFT && RIGHT*/
+    /* padding: 50px 100px; */
+
+    /* Four Parameters 1st => TOP && 2nd => RIGHT && 3rd => BOTTOM &&4th => LEFT */
+    padding: 50px 100px 150px 200px;
+
+      /* OUTER SPACING */
+      margin: 50px;
+}
+
+.box-1,.box-2 {
+    width: 300px;
+    height: 300px;
+    background-color: #333333;
+    margin: 30px;
+}
+
+.box-1{
+    padding: 50px;
+}
+
+.box-2{
+    padding: 50px;
+   
+}
+
+.position-parent{
+    height: 100%;
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    /* position: static; */
+    position: relative;
+    
+    left: 50%;
+    top: 300px;
+    transition: all 1s;
+}
+
+.position-parent:hover{
+    background-color: green;
+    left: 60%;
+    top: 400px;
+}
+
+.position-child{
+    width: 50px;
+    height: 50px;
+    background-color: orangered;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+/* 1st = satic no value to move the element */
+
+/* 2nd = relative element from the place where sit */
+
+/* 3rd = absolute if the parent element is relative and the child element look for the parent if not browser*/
+
+/* 4th = fixed its always look browser even if the parent is relative */
+
+
+button{
+    padding: 20px 50px;
+    border: none;
+    background-color: blue;
+    color: #ffffff;
+    transition: all 1s;
+}
+
+button:hover{
+    background-color: orangered;
+}

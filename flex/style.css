@@ -1,0 +1,110 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 20px;
+}
+
+h1{
+    color: #ffffff;
+}
+
+
+.flex-parent{
+    height: 600px;
+    display: flex;
+    /* justify-content: flex-start; */
+    /* justify-content: center; */
+    /* justify-content: flex-end; */
+    justify-content: space-between;
+    /* justify-content: space-evenly; */
+    /* justify-content: space-around; */
+    /* align-items: flex-start; */
+    /* align-items: center; */
+    /* align-items: flex-end; */
+    /* flex-direction: row; */
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+    /* flex-wrap: nowrap; */
+    /* flex-wrap: wrap; */
+}
+
+.flex-child{
+    width: 250px;
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+    /* flex-basis: 250px; */
+    /* align-self: center; */
+    height: 250px;
+    background-color: blue;
+}
+
+
+
+
+.flex-parent>div:first-child{
+  /* background-color: green; */
+  /* flex-grow: 1; */
+  /* align-self: flex-start; */
+  /* flex-shrink: 1; */
+  /* order: 2; */
+}
+
+.flex-parent>div:nth-child(2){
+    /* background-color: rgb(0, 77, 128); */
+    /* flex-grow: 2; */
+    /* align-self: center; */
+    /* flex-shrink: 2; */
+    /* order: 3; */
+}
+
+  .flex-parent>div:last-child{
+    /* background-color: #f76c16; */
+    /* flex-grow: 3; */
+    /* align-self: flex-end; */
+    /* flex-shrink: 3; */
+    /* order: 1; */
+  }
+
+
+  @media only screen and (max-width: 800px) {
+    .flex-parent>div:last-child{
+        background-color: #ff00ee;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .flex-parent>div:nth-child(2){
+        background-color: orangered;
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .flex-parent>div:first-child{
+        background-color: green;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .flex-parent>div:last-child{
+        background-color: #ff00ee;
+    }
+  }
+
+  @media only screen and (min-width: 1100px) {
+    .flex-parent>div:nth-child(2){
+        background-color: orangered;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    .flex-parent>div:first-child{
+        background-color: green;
+    }
+  }
+
