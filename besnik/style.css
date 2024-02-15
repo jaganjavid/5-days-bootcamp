@@ -1,0 +1,123 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.my-btn{
+    padding: 15px 30px;
+    background-color: #231A36;
+    color: #ffffff !important;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+/* Header Start */
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-wrapper nav{
+    display: flex;
+    gap: 30px;
+}
+
+.header-wrapper nav a{
+    color: #ffffff;
+}
+
+/* Header End */
+
+/* Banner Start */
+
+main{
+    background: url("./images/banner/bg.png") no-repeat center;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.banner{
+    padding: 100px 0px;
+}
+
+.banner h1{
+    font-size: 94px;
+}
+
+
+/* Banner End */
+
+
+/* Trust Start */
+.trust{
+    padding: 100px 0px;
+}
+.trust-wrapper>div>div>div{
+   text-align: center;
+}
+
+.trust-wrapper>div>div>div img{
+    margin-bottom: 25px;
+}
+
+
+/* Trust End */
+
+/* Solution Start */
+.solution{
+    padding: 100px 0px;
+}
+
+.solution .container{
+    max-width: 800px;
+}
+
+.solution-wrapper h4{
+    color: #1B1BEB;
+}
+
+.solution-wrapper>div>div:first-child>div>span{
+   text-transform: uppercase;
+}
+
+h2{
+    position: relative;
+    display: inline-block;
+}
+
+h2 img{
+    top: -40px;
+    right: -70px;
+    position: absolute;
+}
+/* Solution End */
+
+
+@media only screen and (min-width: 768px) {
+    .trust-wrapper>div>div>div img{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .header-wrapper{
+        flex-direction: column;
+    }
+}
