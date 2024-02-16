@@ -65,7 +65,6 @@
     background-color: blue;
     /* position: static; */
     position: relative;
-    
     left: 50%;
     top: 300px;
     transition: all 1s;
