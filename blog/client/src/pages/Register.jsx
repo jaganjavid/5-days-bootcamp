@@ -6,15 +6,14 @@ const Register = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  const register = (event) => {
+  const register = async (event) => {
     event.preventDefault();
     
-    fetch("https://jsonplaceholder..com/users")
-    .then((res) => {
-      return res.json();
-    }).then(data => console.log(data))
-    .catch(err => console.log(err));
-
+    await fetch("http://localhost:8000/register",{
+      method:"POST",
+      body:JSON.stringify({userName, password}),
+      headers: {"Content-Type" : "application/json"}
+    })
 
   }
   
