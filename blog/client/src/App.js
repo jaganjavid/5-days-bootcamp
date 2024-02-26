@@ -11,7 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={
-         <Home/>
+          <Home />
         } />
 
         <Route path="/login" element={
@@ -20,6 +20,12 @@ function App() {
 
         <Route path="/register" element={
           <Register />
+        } />
+
+        <Route path="/create" element={
+          <div>
+            <h2>Create Post</h2>
+          </div>
         } />
       </Route>
     </Routes>

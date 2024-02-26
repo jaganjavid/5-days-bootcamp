@@ -6,15 +6,29 @@ const Register = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
+ 
+
   const register = async (event) => {
     event.preventDefault();
+
+    if(userName === "" || password === ""){
+      alert("Fill the form");
+      return;
+    }
     
-    await fetch("http://localhost:8000/register",{
+   const reponse =  await fetch("http://localhost:8000/register",{
       method:"POST",
       body:JSON.stringify({userName, password}),
       headers: {"Content-Type" : "application/json"}
     })
 
+    if(reponse.status === 200){
+      alert("Registration Success");
+      setUserName("");
+      setPassword("");
+    } else {
+      alert("Username already exist")
+    }
   }
   
   return (
