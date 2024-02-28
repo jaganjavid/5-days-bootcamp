@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register"
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import Createpost from "./pages/Createpost";
 
 function App() {
   return (
@@ -23,9 +24,7 @@ function App() {
         } />
 
         <Route path="/create" element={
-          <div>
-            <h2>Create Post</h2>
-          </div>
+          <Createpost/>
         } />
       </Route>
     </Routes>

@@ -1,6 +1,8 @@
 import React from 'react'
+import { format} from 'date-fns'
 
-const Post = () => {
+const Post = ({title, content, cover, createdAt}) => {
+
   return (
     <div className='post mt-5'>
        <div className='row align-items-center'>
@@ -9,10 +11,13 @@ const Post = () => {
         </div>
         <div className='col-md-6'>
             <div>
-                <h2>This is my car</h2>
+                <h2>{title}</h2>
+                <div className='d-flex gap-3'>
                 <span>Jagan Javid</span>
+                <time>{format(new Date(createdAt), "MM/dd/yyyy HH:mm")}</time>
+                </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quas, ducimus debitis dignissimos iste dolores minima minus pariatur, nemo officia nisi tempora repudiandae incidunt reiciendis aspernatur ut doloremque. Quaerat, tempore!
+                    {content}
                 </p>
             </div>
         </div>

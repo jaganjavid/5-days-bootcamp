@@ -3,9 +3,13 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require('mongoose');
 const User = require("./models/User.js");
+const Post = require("./models/Post.js");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
+var fs = require('fs');
 
 const app = express();
 
@@ -85,6 +89,44 @@ app.get("/profile", (req, res) => {
 
 app.post("/logout", (req, res) => {
    res.cookie("token", "").json("ok");
+})
+
+app.post("/post", upload.single("file"), async(req, res) => {
+
+    const {originalname,path} = req.file;
+
+
+    const parts = originalname.split(".");
+
+    const ext = parts[parts.length - 1];
+
+    const newName = path+"."+ext;
+
+    fs.renameSync(path,newName);
+
+    const {token} = req.cookies;
+
+    jwt.verify(token, secret, {} , async(err, info) => {
+        if(err) throw err;
+
+        const {title, content} = req.body;
+
+        const postDoc = await Post.create({
+            title,
+            content,
+            cover:newName,
+            author:info.id
+        })
+    
+        res.json(postDoc);
+    })
+
+ 
+})
+
+app.get("/post", async(req, res) => {
+    const posts = await Post.find();
+    res.json(posts)
 })
 
 app.listen(8000, () => {

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   
@@ -6,6 +7,7 @@ const Register = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
  
 
   const register = async (event) => {
@@ -24,6 +26,7 @@ const Register = () => {
 
     if(reponse.status === 200){
       alert("Registration Success");
+      navigate("/login");
       setUserName("");
       setPassword("");
     } else {
